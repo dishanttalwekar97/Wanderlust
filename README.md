@@ -1,64 +1,94 @@
-🏡 Wanderlust — Airbnb Clone
+# 🌍 Wanderlust – Airbnb-Style Travel Listing App  
+A full-stack web application where users can browse, create, edit, and review travel listings — inspired by Airbnb.
 
-A full-stack web application where users can explore listings, create their own, write reviews, and manage accounts. Built using Node.js, Express, MongoDB, EJS, and Bootstrap.
+---
 
-Live Demo: (https://wanderlust-25.onrender.com)
+## ✨ Features
+- 🏡 Create, edit, and delete property listings  
+- ⭐ Add and manage reviews  
+- 👤 User authentication (Login / Register)  
+- 🖼 Image upload with Cloudinary  
+- 🗺 Fully responsive UI  
+- 🚀 Deployment ready for Render  
+- 🛢 MongoDB Atlas connection  
 
+---
 
-⭐ Features
-🔐 Authentication & Authorization
-Secure user registration & login using Passport.js
-Password hashing using bcrypt
-Only logged-in users can create, edit, or delete listings
-Authorization to prevent users from modifying others' listings
+## 🛠 Tech Stack
+| Category | Technologies |
+|---------|--------------|
+| **Frontend** | EJS, CSS, Bootstrap, JavaScript |
+| **Backend** | Node.js, Express.js |
+| **Database** | MongoDB Atlas |
+| **Deployment** | Render |
+| **Other** | Cloudinary, Multer, dotenv |
 
-🏘️ Listings
-Create new listings with title, price, description, location
-Upload images (Cloudinary integration if enabled)
-View full listing details
-Edit & delete your own listings
+---
 
-⭐ Reviews
-Add reviews & ratings to listings
-Delete your reviews
-Prevent duplicate reviews
-
-🌍 Maps (Optional)
-Map integration using Mapbox (if configured)
-Shows listing location on map
-
-🎨 UI / UX
-Clean, responsive UI
-Bootstrap 5 + custom CSS
-Dynamic navbar, flash messages, error handling pages
-
-⚙️ Backend Technologies
-Node.js + Express.js
-MongoDB + Mongoose
-EJS templating engine
-Method-Override for PUT/DELETE
-Session handling & cookies
-Error-handling middleware
-
-
+## 📂 Project Structure
+```
 Wanderlust/
+│── public/
+│── routes/
+│── controllers/
+│── models/
+│── views/
+│   ├── layouts/
+│   ├── includes/
+│   ├── listings/
 │── app.js
 │── package.json
-│── .env
-│── /models
-│   ├── listing.js
-│   └── review.js
-│── /routes
-│   ├── listing.js
-│   ├── review.js
-│   └── user.js
-│── /views
-│   ├── listings
-│   ├── reviews
-│   ├── users
-│   ├── includes
-│   └── layouts
-│── /public
-│   ├── css
-│   └── js
-└── /utils
+│── README.md
+```
+
+---
+
+## 🚀 Installation & Setup
+
+### 1️⃣ Clone the Repository
+```bash
+git clone https://github.com/your-username/Wanderlust.git
+cd Wanderlust
+```
+
+### 2️⃣ Install Dependencies
+```bash
+npm install
+```
+
+### 3️⃣ Add Environment Variables  
+Create a `.env` file:
+```
+CLOUDINARY_CLOUD_NAME=your_cloud_name
+CLOUDINARY_KEY=your_api_key
+CLOUDINARY_SECRET=your_api_secret
+
+MONGO_URL=your_mongodb_url
+SECRET=your_session_secret
+```
+
+### 4️⃣ Run the App
+```bash
+npm start
+```
+
+---
+
+## 🌐 Live Demo  
+🔗 https://your-render-app.onrender.com
+
+
+
+## 🧩 Future Enhancements
+- ⛺ Advanced filters  
+- 🌍 Map integration  
+- 💬 Messaging system  
+- ❤️ Wishlist  
+
+---
+
+## 🤝 Contributing  
+Pull requests are welcome.  
+For major changes, open an issue first to discuss your idea.
+
+
