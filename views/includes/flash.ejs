@@ -1,0 +1,87 @@
+<% if(success && success.length) { %>
+<div class="alert alert-success alert alert-warning alert-dismissible fade show col-6 offset-3" role="alert">
+  <%= success %>
+   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+
+</div>
+<% } %>
+
+<% if(error && error.length) { %>
+<div class="alert alert-danger alert alert-warning alert-dismissible fade show col-6 offset-3" role="alert">
+  <%= error %>
+   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+
+</div>
+<% } %>
+
+<style>
+/* ✅ Smooth Success Alert */
+.alert-success {
+  background: rgba(76, 175, 80, 0.15) !important; /* soft green with transparency */
+  color: #2e7d32 !important; /* elegant green text */
+  border: 1px solid rgba(76, 175, 80, 0.25);
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(76, 175, 80, 0.15);
+  font-weight: 500;
+  backdrop-filter: blur(6px);
+  animation: fadeSlide 0.6s ease;
+}
+
+/* 🚨 Smooth Error Alert */
+.alert-danger {
+  background: rgba(244, 67, 54, 0.15) !important; /* soft red */
+  color: #c62828 !important;
+  border: 1px solid rgba(244, 67, 54, 0.25);
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(244, 67, 54, 0.15);
+  font-weight: 500;
+  backdrop-filter: blur(6px);
+  animation: fadeSlide 0.6s ease;
+}
+
+/* ✨ Smooth fade + slide animation */
+@keyframes fadeSlide {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 📱 Responsive flash messages */
+@media (max-width: 768px) {
+  .alert {
+    width: 90% !important;
+    margin: 10px auto !important;
+    font-size: 0.9rem !important;
+    padding: 0.75rem 1rem !important;
+  }
+
+  .alert .btn-close {
+    transform: scale(0.9);
+  }
+}
+
+/* 💻 Desktop view */
+@media (min-width: 769px) {
+  .alert {
+    width: 60% !important;
+    margin: 10px auto !important;
+    text-align: center;
+  }
+}
+</style>
+
+<script>
+  // ⏳ Auto-hide flash message after 3 seconds
+  setTimeout(() => {
+    const alert = document.querySelector('.alert');
+    if (alert) {
+      const bsAlert = bootstrap.Alert.getOrCreateInstance(alert);
+      bsAlert.close();
+    }
+  }, 3000);
+</script>

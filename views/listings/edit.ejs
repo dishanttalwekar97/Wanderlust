@@ -1,0 +1,130 @@
+<% layout("/layouts/boilerplate")  %>
+<style>
+  @media (max-width: 768px) {
+  .row {
+    justify-content: center !important;
+  }
+
+  .col-8.offset-2 {
+    width: 80% !important;
+    margin: 0 auto !important;
+    float: none !important;
+  }
+
+  form {
+    width: 100%;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+</style>
+<body>
+    <div class="row">
+        <div class="col-8 offset-2">
+    <h3>Edit you listing</h3>
+    <form action="/listings/<%= Listing._id %>?_method=PUT" method="POST" novalidate
+        class="needs-validation"
+        enctype="multipart/form-data">
+       <div class="mb-3">
+
+            <label for="title" class="label-form">Title</label>
+            
+            <input type="text" name="listing[title]" value="<%= Listing.title %>" id="" class="form-control" required>
+             <div class="valid-feedback">Title Look Good!</div>
+        </div>
+       
+        <br>
+
+         <div class="mb-3">
+
+            <label for="Description" class="label-form">Description</label>
+            
+            
+            <textarea name="listing[description]"   type="text" class="form-control" required><%= Listing.description %></textarea >
+                 <div class="valid-feedback">Plese enter short Description</div>
+        </div>
+       
+         <div class="mb-3">
+          Original Listing Image:<br>
+          <img src="<%= originalImage %>"  />
+            
+        </div>
+        
+         <div class="mb-3">
+
+            <label for="image" class="label-form">Upload New image</label>
+            
+             <input type="file" name="listing[image]" id="" class="form-control"  >
+
+             <div class="valid-feedback">Please Enter valid link</div>
+        </div>
+        <br>
+        <div class="row">
+            
+         <div class="mb-3 col-md-4">
+
+            <label for="price" class="label-form">Price</label>
+            
+            <input type="number" name="listing[price]" id="" value="<%= Listing.price %>" class="form-control" required>
+             <div class="valid-feedback">Please Enter valid Price</div>
+        </div>
+        <br>
+
+         <div class="mb-3 col-md-8">
+
+            <label for="country" class="label-form">Country</label>
+            
+            <input type="text" value="<%= Listing.country %>" name="listing[country]" class="form-control" required>
+             <div class="valid-feedback">Please Enter valid Country</div>
+        </div>
+
+        </div>
+
+        <br>
+
+        
+          <div class="mb-3">
+  <label for="category" class="form-label">Category</label>
+  <select name="listing[category]" class="form-control" required>
+    <option value="">Select category</option>
+    <option value="Trending" <%= Listing.category === 'Trending' ? 'selected' : '' %>>Trending</option>
+    <option value="Rooms" <%= Listing.category === 'Rooms' ? 'selected' : '' %>>Rooms</option>
+    <option value="Iconic cities" <%= Listing.category === 'Iconic cities' ? 'selected' : '' %>>Iconic cities</option>
+    <option value="Mountains" <%= Listing.category === 'Mountains' ? 'selected' : '' %>>Mountains</option>
+    <option value="Castle" <%= Listing.category === 'Castle' ? 'selected' : '' %>>Castle</option>
+    <option value="Amazing pools" <%= Listing.category === 'Amazing pools' ? 'selected' : '' %>>Amazing pools</option>
+    <option value="Camping" <%= Listing.category === 'Camping' ? 'selected' : '' %>>Camping</option>
+    <option value="Farms" <%= Listing.category === 'Farms' ? 'selected' : '' %>>Farms</option>
+    <option value="Architect" <%= Listing.category === 'Architect' ? 'selected' : '' %>>Architect</option>
+    <option value="Sea" <%= Listing.category === 'Sea' ? 'selected' : '' %>>Sea</option>
+  </select>
+  <div class="invalid-feedback">
+    Please select a valid category
+  
+</div>
+
+        </div>
+
+         <div class="mb-3">
+
+            <label for="location" class="label-form">Location</label>
+            
+            
+            
+            <input type="text" value="<%= Listing.location %>" name="listing[location]" class="form-control" required>
+             <div class="valid-feedback">Please Enter valid Location</div>
+        </div>
+         <br>
+        <button class="btn  btn-dark add-btn">Add</button>
+
+
+    </form>
+     </div>
+    </div>
+    <script src="/js/script.js"></script>
+</body>
+</html>
