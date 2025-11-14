@@ -46,6 +46,34 @@
     padding: 0 10px;
   }
 }
+/* MOBILE ONLY — Edit & Delete side-by-side and equal size */
+@media (max-width: 768px) {
+
+  /* Remove Bootstrap offset spacing on mobile */
+  .btns .offset-3,
+  .btns .offset-5 {
+    margin-left: 0 !important;
+  }
+
+  /* Make container a flex row */
+  .btns {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 12px; /* space between buttons */
+  }
+
+  /* Make both button elements equal width */
+  .btns a.edit-btn,
+  .btns button {
+    flex: 1;                  /* equal space */
+    width: 100% !important;
+    margin: 0 !important;
+    text-align: center;
+  }
+}
+
 
   
 </style>
